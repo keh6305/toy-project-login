@@ -15,7 +15,7 @@ import java.util.Iterator;
 @RequiredArgsConstructor
 public class IndexController {
     @GetMapping("/")
-    public String index(Model model) {
+    public String index() {
         String id = SecurityContextHolder.getContext().getAuthentication().getName();
 
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();

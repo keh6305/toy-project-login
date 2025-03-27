@@ -15,4 +15,9 @@ public class Member {
     private String role;
     private String createdAt;
     private String deletedAt;
+
+    public void setMemberLogin(String username, String role) {
+        this.username = username;
+        this.role = role;
+    }
 }
