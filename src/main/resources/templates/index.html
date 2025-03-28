@@ -5,44 +5,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Index Page</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-color: #f4f4f4;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            animation: fadeIn 1s ease-in-out;
         }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
         .container {
             text-align: center;
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background: rgba(255, 255, 255, 0.2);
+            padding: 30px;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
+
         h1 {
-            color: #333;
+            font-size: 2em;
+            font-weight: 600;
+            margin-bottom: 10px;
         }
+
+        p {
+            font-size: 1.1em;
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+
         a {
             display: inline-block;
-            margin-top: 10px;
-            padding: 10px 20px;
+            padding: 12px 24px;
             color: white;
-            background: #007BFF;
+            background: #7048e8;
             text-decoration: none;
-            border-radius: 5px;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 4px 10px rgba(112, 72, 232, 0.4);
         }
+
         a:hover {
-            background: #0056b3;
+            background: #6238d4;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(98, 56, 212, 0.5);
         }
     </style>
 </head>
 <body>
 <div class="container">
-    <h1>Welcome to My Index Page</h1>
-    <p>This is a simple index page for your project.</p>
-    <a href="/login">Go to Login</a>
+    <h1>환영합니다!</h1>
+    <p>세련된 디자인으로 개선된 인덱스 페이지입니다.</p>
+    <a href="/login">로그인 하기</a>
 </div>
 </body>
 </html>
