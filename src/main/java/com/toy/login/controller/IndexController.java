@@ -25,9 +25,6 @@ public class IndexController {
         GrantedAuthority auth = iter.next();
         String role = auth.getAuthority();
 
-        System.out.println("id = " + id);
-        System.out.println("role = " + role);
-
         return "index";
     }
 }

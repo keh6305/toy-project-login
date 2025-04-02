@@ -1,145 +1,205 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>로그인 페이지</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>로그인 페이지</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
-        body {
-            font-family: 'Poppins', sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            animation: fadeIn 1s ease-in-out;
-        }
+            body {
+                font-family: 'Poppins', sans-serif;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+                background: linear-gradient(135deg, #667eea, #764ba2);
+                color: white;
+                animation: fadeIn 1s ease-in-out;
+            }
 
-        .login-container {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 40px;
-            border-radius: 12px;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            width: 400px;
-            text-align: center;
-        }
+            .login-container {
+                background: rgba(255, 255, 255, 0.2);
+                padding: 40px;
+                border-radius: 12px;
+                backdrop-filter: blur(10px);
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+                width: 400px;
+                text-align: center;
+            }
 
-        h2 {
-            font-size: 1.8em;
-            font-weight: 600;
-            margin-bottom: 20px;
-        }
+            h2 {
+                font-size: 1.8em;
+                font-weight: 600;
+                margin-bottom: 20px;
+            }
 
-        .form-control {
-            border-radius: 8px;
-            padding: 12px;
-            font-size: 1rem;
-            border: none;
-            outline: none;
-            transition: all 0.3s ease-in-out;
-        }
+            .form-control {
+                border-radius: 8px;
+                padding: 12px;
+                font-size: 1rem;
+                border: none;
+                outline: none;
+                transition: all 0.3s ease-in-out;
+            }
 
-        .form-control:focus {
-            box-shadow: 0 0 10px rgba(255, 126, 179, 0.5);
-            border: 2px solid #7048e8;
-        }
+            .form-control:focus {
+                box-shadow: 0 0 10px rgba(255, 126, 179, 0.5);
+                border: 2px solid #7048e8;
+            }
 
-        .btn-primary {
-            width: 100%;
-            padding: 12px;
-            border-radius: 8px;
-            font-weight: 600;
-            background: #7048e8;
-            border: none;
-            transition: all 0.3s ease-in-out;
-            box-shadow: 0 4px 10px rgba(112, 72, 232, 0.4);
-        }
+            .btn-primary {
+                width: 100%;
+                padding: 12px;
+                border-radius: 8px;
+                font-weight: 600;
+                background: #7048e8;
+                border: none;
+                transition: all 0.3s ease-in-out;
+                box-shadow: 0 4px 10px rgba(112, 72, 232, 0.4);
+            }
 
-        .btn-primary:hover {
-            background: #6238d4;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(98, 56, 212, 0.5);
-        }
+            .btn-primary:hover {
+                background: #6238d4;
+                transform: translateY(-2px);
+                box-shadow: 0 6px 15px rgba(98, 56, 212, 0.5);
+            }
 
-        .alert {
-            margin-top: 20px;
-            display: none;
-        }
+            .alert {
+                margin-top: 20px;
+                display: none;
+            }
 
-        .signup-btn {
-            display: block;
-            width: 100%;
-            padding: 12px;
-            border-radius: 8px;
-            margin-top: 15px;
-            background: #b28aff;
-            color: white;
-            font-weight: 600;
-            text-align: center;
-            text-decoration: none;
-            transition: all 0.3s ease-in-out;
-            box-shadow: 0 4px 10px rgba(178, 138, 255, 0.4);
-        }
+            .signup-btn {
+                display: block;
+                width: 100%;
+                padding: 12px;
+                border-radius: 8px;
+                margin-top: 15px;
+                background: #b28aff;
+                color: white;
+                font-weight: 600;
+                text-align: center;
+                text-decoration: none;
+                transition: all 0.3s ease-in-out;
+                box-shadow: 0 4px 10px rgba(178, 138, 255, 0.4);
+            }
 
-        .signup-btn:hover {
-            background: #9d72f2;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(98, 56, 212, 0.5);
-        }
+            .signup-btn:hover {
+                background: #9d72f2;
+                transform: translateY(-2px);
+                box-shadow: 0 6px 15px rgba(98, 56, 212, 0.5);
+            }
 
-        .find-btn-group {
-            text-align: center;
-            margin-top: 15px;
-        }
+            .find-btn-group {
+                text-align: center;
+                margin-top: 15px;
+            }
 
-        .find-btn-group a {
-            font-size: 0.9rem;
-            color: #e0d6f5;
-            text-decoration: none;
-            margin: 0 10px;
-            font-weight: 500;
-        }
+            .find-btn-group a {
+                font-size: 0.9rem;
+                color: #e0d6f5;
+                text-decoration: none;
+                margin: 0 10px;
+                font-weight: 500;
+            }
 
-        .find-btn-group a:hover {
-            text-decoration: underline;
-        }
-    </style>
-</head>
-<body>
+            .find-btn-group a:hover {
+                text-decoration: underline;
+            }
 
-<div class="login-container">
-    <h2>로그인</h2>
-    <form action="/login" method="POST">
-        <div class="mb-3">
-            <input type="text" id="username" name="username" class="form-control" placeholder="아이디" required>
+            .is-invalid {
+                background-color: #ffe6e6;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="login-container">
+            <h2>로그인</h2>
+            <form action="/login" method="POST">
+                <div class="mb-3">
+                    <input type="text" id="username" name="username" class="form-control" placeholder="아이디" required>
+                </div>
+                <div class="mb-3">
+                    <input type="password" id="password" name="password" class="form-control" placeholder="비밀번호" required>
+                </div>
+                <button type="button" class="btn btn-primary" onclick="login();">로그인</button>
+            </form>
+
+            <!-- 로그인 실패 시 -->
+            <div class="alert alert-danger mt-3" id="error-message">
+                잘못된 사용자명 또는 비밀번호입니다.
+            </div>
+
+            <!-- 회원가입 버튼 -->
+            <a href="/signup" class="signup-btn">회원가입</a>
+
+            <!-- 아이디 찾기, 비밀번호 찾기 -->
+            <div class="find-btn-group">
+                <a href="/find-username">아이디 찾기</a>
+                |
+                <a href="/find-password">비밀번호 찾기</a>
+            </div>
         </div>
-        <div class="mb-3">
-            <input type="password" id="password" name="password" class="form-control" placeholder="비밀번호" required>
-        </div>
-        <button type="submit" class="btn btn-primary">로그인</button>
-    </form>
+    </body>
+    <script>
+        function login() {
+            if(loginValidation()) {
+                let url = "/login";
 
-    <!-- 로그인 실패 시 -->
-    <div class="alert alert-danger mt-3" id="error-message">
-        잘못된 사용자명 또는 비밀번호입니다.
-    </div>
+                fetch(url, {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({
+                        username: document.getElementById('username').value,
+                        password: document.getElementById('password').value,
+                    })
+                })
+                .then(response => response.json())
+                .then(result => {
+                    if(result.status === "OK") {
+                        sessionStorage.setItem('access-token', "Bearer " + result.data);
+                    }
+                })
+                .catch(error => {
+                    console.log(error);
+                });
+            }
+        }
 
-    <!-- 회원가입 버튼 -->
-    <a href="/signup" class="signup-btn">회원가입</a>
+        function loginValidation() {
+            let isValid = true;
 
-    <!-- 아이디 찾기, 비밀번호 찾기 -->
-    <div class="find-btn-group">
-        <a href="/find-username">아이디 찾기</a>
-        |
-        <a href="/find-password">비밀번호 찾기</a>
-    </div>
-</div>
+            let username = document.getElementById("username");
+            let password = document.getElementById("password");
 
-</body>
+            // 아이디 유효성 검사
+            if (username.value.trim() === "") {
+                username.classList.add('is-invalid');
+                username.classList.remove('is-valid');
+
+                isValid = false;
+            }
+            else {
+                username.classList.add('is-valid');
+                username.classList.remove('is-invalid');
+            }
+
+            // 비밀번호 유효성 검사
+            if (password.value.trim() === "") {
+                password.classList.add('is-invalid');
+                password.classList.remove('is-valid');
+
+                isValid = false;
+            }
+            else {
+                password.classList.add('is-valid');
+                password.classList.remove('is-invalid');
+            }
+
+            return isValid;
+        }
+    </script>
 </html>
